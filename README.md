@@ -1,5 +1,5 @@
-# virustotal_slack_command
-Simple PHP script to check virustotal from slack
+# Slack Virustotal URL checker
+Simple script to check URL's on virustotal from slack
 
 ## What are commands?
 Messages that start with a slash / are commands and will behave differently from regular messages. For example, you can use the "topic" command to change your current channel's topic to "Hello!" by typing /topic Hello!. When you type /remind me in 10 minutes to drink a glass of water the command will set a reminder for you to drink a glass of water in 10 minutes.
