@@ -66,12 +66,8 @@ if ($text == "help")
 	  else
 		{ // Error occured
 		$php_array = array(
-			array(
-				'response_type' => 'ephemeral'
-			) ,
-			array(
+				'response_type' => 'ephemeral',
 				'text' => "Sorry, that didn't work. Please try again."
-			)
 		);
 		$reply = json_encode($php_array);
 		}
