@@ -50,6 +50,18 @@ if ($text == "help")
 		{ // OK
 		$js = json_decode($result, true);
 
+                if ($js['positives'] == "")
+                {// Results not yet available
+                $php_array = array(
+                                'response_type' => 'ephemeral',
+                                'text' => "No recent results for this URL. Scanning will take place automatically. Please try again in 5 minutes."
+                );
+                $reply = json_encode($php_array);
+                }
+                else
+                {
+
+
 		// make json reply
 
 		$php_array = array(
@@ -62,6 +74,7 @@ if ($text == "help")
                 . " scanners. \n \n " . $js['permalink']
 		);
 		$reply = json_encode($php_array);
+		}
 		}
 	  else
 		{ // Error occured
