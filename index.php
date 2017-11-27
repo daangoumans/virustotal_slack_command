@@ -50,7 +50,7 @@ if ($text == "help")
 		{ // OK
 		$js = json_decode($result, true);
 
-                if ($js['positives'] == "")
+                if (strlen($js['positives']) == 0)
                 {// Results not yet available
                 $php_array = array(
                                 'response_type' => 'ephemeral',
