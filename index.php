@@ -50,6 +50,18 @@ if ($text == "help")
 		{ // OK
 		$js = json_decode($result, true);
 
+                if (strlen($js['positives']) == 0)
+                {// Results not yet available
+                $php_array = array(
+                                'response_type' => 'ephemeral',
+                                'text' => "No recent results for this URL. Scanning will take place automatically. Please try again in 5 minutes."
+                );
+                $reply = json_encode($php_array);
+                }
+                else
+                {
+
+
 		// make json reply
 
 		$php_array = array(
@@ -63,15 +75,12 @@ if ($text == "help")
 		);
 		$reply = json_encode($php_array);
 		}
+		}
 	  else
 		{ // Error occured
 		$php_array = array(
-			array(
-				'response_type' => 'ephemeral'
-			) ,
-			array(
+				'response_type' => 'ephemeral',
 				'text' => "Sorry, that didn't work. Please try again."
-			)
 		);
 		$reply = json_encode($php_array);
 		}
